@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* 탭 스타일 */
+    .tab {
+      display: flex;
+      justify-content: space-between;
+      /* background-color: #f1f1f1; */
+      border-bottom: solid 3px rgba(97, 206, 171, 1);
+    
+      margin-top: 24px;
+    }
+
+    /* 탭 버튼 스타일 */
+    .tab button {
+      flex: 1;
+      background-color: inherit;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+    }
+
+    /* 활성화된 탭 버튼 스타일 */
+    .tab button.active {
+      background-color: #ccc;
+    }
+
+    /* 탭 컨텐츠 스타일 */
+    .tabcontent {
+      display: none;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    /* 순위표 스타일 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+      
+    }
+    
+
+    /* 팀명 셀 스타일 */
+    .team-cell img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    
+    td:nth-child(2), th:nth-child(2){
+      text-align: left;
+    }
+
+    /* 열 구분 스타일 */
+    th, td {
+      border-right: 1px solid #fff;
+      text-align: center;
+    }
+
+
+    /* 마지막 열 구분 스타일 */
+    th:last-child, td:last-child {
+      border-right: none;
+
+    }
+
+    .tabcontent {
+        height: 280px; /* 스크롤 가능한 영역의 높이 지정 */
+        overflow-y: scroll; /* 초기에는 스크롤바를 숨김 */
+    }
+
+  </style>
+</head>
+<body>
+  <!-- 탭 버튼 -->
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'PremierLeague')">Premier League</button>
+    <button class="tablinks" onclick="openTab(event, 'LaLiga')">La Liga</button>
+    <button class="tablinks" onclick="openTab(event, 'SeriaA')">Seria A</button>
+    <button class="tablinks" onclick="openTab(event, 'BundesLiga')">BundesLiga</button>
+  </div>
+  
+  <!-- Premier League 순위표 -->
+  <div id="PremierLeague" class="tabcontent">
+    <table >
+      <colgroup>
+        <col width="5%">
+        <col width="60%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+      </colgroup>
+      <tr>
+        <th>P</th>
+        <th>Club</th>
+        <th>P</th>
+        <th>W</th>
+        <th>D</th>
+        <th>L</th>
+        <th>F</th>
+        <th>A</th>
+        <th>PT</th>
+      </tr>
+      <!-- Premier League 순위표 데이터 -->
+      <tr>
+        <td>1</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/Vcj7Mh8779mzEG2iZ-9kjiVWzQIGfxHwn2eeBPLDbnmNxp41t5uvZIqr8_pm0n4n0Fq54Ph8fw9AFSEK-5MdNSHPAvBnRzMIdterta7So_p5M_io_1P5-z0BgZKGmpYqEDcuhW9f7EIPJhEsP-8Y7w.svg" alt="Manchester City"> Manchester City</td>
+        <td>38</td>
+        <td>28</td>
+        <td>5</td>
+        <td>5</td>
+        <td>94</td>
+        <td>33</td>
+        <td>89</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/K0m5OaZrB6rPWJ6PQhW21v3XtemlLKhx5Byo7MXVBo7md0Br2wBvNGLUAIqX_TaJXyrFa1xt-gYP17lPn4_bO8-C1jhbevhmek379-IvZTmlbTmeEXUqLf5OchUOQTpbSHrjODLKE4VJNV0rbYl-Ow.svg" alt="Arsenal"> Arsenal</td>
+        <td>38</td>
+        <td>26</td>
+        <td>6</td>
+        <td>6</td>
+        <td>88</td>
+        <td>43</td>
+        <td>84</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/mqqORmpRVEhVl-gSvsfb_t4aQ-DsZyzxjLh6tbAozAstfRyjiUQ6pkFzlSj0FYAvUV3UpObSWKFDKu-U-NG6hQyLleewzPAGCClDs6AgIeObGbS-Uy9nfaTM1KuV6naTbkiqLxluWPhGz8pgKYQJwA.svg" alt="Manchester United"> Manchester United</td>
+        <td>38</td>
+        <td>23</td>
+        <td>6</td>
+        <td>9</td>
+        <td>58</td>
+        <td>43</td>
+        <td>75</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/XmmKimCCo_PYrzReSaVIXTciBm2YAUxUYSshgxk7XGTXK0F38eL4o5gYNSIwecJmJHaDMfNRn3Azh5MD0EFpdsNG4Y7oHyXaQs4EdRHFogOtQNGqjuSBMt8CR9ry1E0H6TeIDPySllPluXSJGItvGw.svg" alt="Newcastle United"> Newcastle United</td>
+        <td>38</td>
+        <td>19</td>
+        <td>14</td>
+        <td>5</td>
+        <td>68</td>
+        <td>33</td>
+        <td>71</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/Bv9w0y0OYbUXieKg-K8J0pMlD0Hl3CLseIYUK0iqCGulbkBIT-k2mqdAoECN6iDtLwuCzr2MACOCH8rNwwVvBodMiZXoNKhOoMalg4IxCJBAb0KAnmXQnVxheMCelPZguLheDfiq_ZbeiHDqYOaXRQ.svg" alt="Liverpool"> Liverpool</td>
+        <td>38</td>
+        <td>19</td>
+        <td>10</td>
+        <td>9</td>
+        <td>75</td>
+        <td>47</td>
+        <td>67</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/c1fq2Eoq7mqJUEg8zc7WBKd7tabSpvhJ6ewvnbhRXL_OSbclE93HFHKIaEUTaYQ65_Bc0MKBISlDG0AtPTCRgg.svg" alt="Brighton & Hove"> Brighton & Hove</td>
+        <td>38</td>
+        <td>18</td>
+        <td>8</td>
+        <td>12</td>
+        <td>72</td>
+        <td>53</td>
+        <td>62</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/LsciqUuwLrjqvYW6cDELbJzn-KRh840H6dsgUdt-fAIJ43KptwQNbIvLcCzWZQPJtaPVagej4GLZO7uWIxocGqSmWJRc9u0wSJ-rwWx5M4wpLVQDiqdsDY6nc3iFPkYP6PHZ1VxU_HtjbEIHz1vcdg.svg" alt="Aston Villa"> Aston Villa</td>
+        <td>38</td>
+        <td>18</td>
+        <td>7</td>
+        <td>13</td>
+        <td>51</td>
+        <td>46</td>
+        <td>61</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/joBQ1oo1l0QD1tZ-n3dfUPpgfe3wNtG7vHfnVsJcbNct8wNwxO2beJMyuGmQSEu4uuQMlx_XTZw2maK1R5aQ6g.svg" alt="Tottenham Hotspur"> Tottenham Hotspur</td>
+        <td>38</td>
+        <td>18</td>
+        <td>6</td>
+        <td>14</td>
+        <td>70</td>
+        <td>63</td>
+        <td>60</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/YmjHj703oukOcCEH0gAx0uGW6Qg0UBO9xWnGMuJUD1AT2knsP4dwtX8uAjJLsVcqGmob1ZUtcJ2zTnqzKX2HQA.svg" alt="Brentford"> Brentford</td>
+        <td>38</td>
+        <td>15</td>
+        <td>14</td>
+        <td>9</td>
+        <td>58</td>
+        <td>46</td>
+        <td>59</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/Z-aa46l6h4eD8F9PDfIY_hXH-i04sjVj2TjNes_xTvgAT2t-O8PPf0MR_Bd4FBlRBLaqY932CNA350YPYFh31-27IxbuFjSLaX1trW1hsAxqahIwaLcpXWhu8DWLaBbEVZggvPu094YTVnOtfHVD5g.svg" alt="Fulham"> Fulham</td>
+        <td>38</td>
+        <td>15</td>
+        <td>7</td>
+        <td>16</td>
+        <td>55</td>
+        <td>53</td>
+        <td>52</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/Wsq2DA7qz_0tX21FYfLk8NbGflhiFFdwcql5B-J-P4LPe_iaHlTnX1cOp372YUQ9SeYK-05dtP_f7OlJe6d4AOwG2HVSH1OFHKQBTdJd1jScimlAzGZBhYd0QTlsg2zCM-qP8bXlJ4FH1s7V_MXjPQ.svg" alt="Crystal Palace"> Crystal Palace</td>
+        <td>38</td>
+        <td>11</td>
+        <td>12</td>
+        <td>15</td>
+        <td>40</td>
+        <td>49</td>
+        <td>45</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/8qayY0McnZ_KpSvf3a3BVawy41xtx40ECB2p2Ugv_eKYNOkYVU3-Xekoz0CZEfbPxJodxzSVsAv91Vwjg6rSphLQOQ53O_apJFU1HapYsSPtM6Q8iUOolrPh9kqTQB7CR6_97fvG6ECjCcagbNrACA.svg" alt="Chelsea"> Chelsea</td>
+        <td>38</td>
+        <td>11</td>
+        <td>11</td>
+        <td>16</td>
+        <td>38</td>
+        <td>47</td>
+        <td>44</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/V9grVOz9WDLWYrCYjNKaHspv-O9XyKW8YT7-J43KuKhGZASh9fMsJ4x0HC4LSrF7eI6n-qvOVAGB-lM24VwPLa3O4F5vzAxrMBWAO2LQVhR0aziVT2VjZRiQ2NdsXDttT_4AzzRabRklyBdmQ_lJYA.svg" alt="Wolverhampton"> Wolverhampton</td>
+        <td>38</td>
+        <td>11</td>
+        <td>8</td>
+        <td>19</td>
+        <td>31</td>
+        <td>58</td>
+        <td>41</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/byoXrJJG6pgjxRZjIyDvc799oSe3h_fJm3Df2P6DF4HuJ1chGq5gszsL6c5A1MGp8tFDEth7pWDvroVpaFMq4Q.svg" alt="West Ham United"> West Ham United</td>
+        <td>38</td>
+        <td>11</td>
+        <td>7</td>
+        <td>20</td>
+        <td>42</td>
+        <td>55</td>
+        <td>40</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/0Fh2xc2Q9zkxZoweSLr73ELq6JEgcg6QWdG5Ce0bT4HQ30r32uT67HEusa6OAEAMyw8uzwFk71jlKZcCVETSdA.svg" alt="Bournemouth"> Bournemouth</td>
+        <td>38</td>
+        <td>11</td>
+        <td>6</td>
+        <td>21</td>
+        <td>37</td>
+        <td>71</td>
+        <td>39</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/TujxKHqyyNworrGiAiznsF0hWsnLLV-YrFa2yTX6tkpGYTu8E_n7Vn8AXzQchImdZI48xFk0NzK2bKVyTuYR-vov1LkZYitiAkqSCw3c87qREV0J4X09TVl5paIG-eMHzLKnrRQipxVkN0ZgMBSMiw.svg" alt="Nottingham Forest"> Nottingham Forest</td>
+        <td>38</td>
+        <td>9</td>
+        <td>11</td>
+        <td>18</td>
+        <td>38</td>
+        <td>68</td>
+        <td>38</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/7BpuhsrxrUIuew-bUOH651s7OIi_NYVw2UYprwZ-Kx7dtwwhjHhEG_w8kJe7BtimPurTsZg5nAKxTha3TM2BqHNtS5vvQBjodgzQQ1fvt_ZOkZUr5jmT6bDt33FKahDsYrp_BODF6atnCNq9cHSKEA.svg" alt="Everton"> Everton</td>
+        <td>38</td>
+        <td>8</td>
+        <td>12</td>
+        <td>18</td>
+        <td>34</td>
+        <td>57</td>
+        <td>36</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/jqkRFattApizWKtjDS-huYVltMS8Wz4e7IQPqIo6uM1Ei_ecvcQVSmYa0qydQ-xFTAEC7aOT1e3Hkrk2uWp3FjHnP5Bp4wBhkFsfT0DpYRUhNKBV80UGFWO7fpbA1MsDD2MMoLct3w19NoMfa-K2tw.svg" alt="Leicester City"> Leicester City</td>
+        <td>38</td>
+        <td>9</td>
+        <td>7</td>
+        <td>22</td>
+        <td>51</td>
+        <td>68</td>
+        <td>34</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/o9bok9OHSSxDQRft0FUevMWyPOmokt9AhOBM-W-h_G70Ja8EG4FgMleOk0TGAS_W0JeOhuHGpxj_dhP0PW4a5g.svg" alt="Leeds United"> Leeds United</td>
+        <td>38</td>
+        <td>7</td>
+        <td>10</td>
+        <td>21</td>
+        <td>48</td>
+        <td>78</td>
+        <td>31</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/PnnTXqw2Lv2zN5KRuSWyyXh7zoKOu_kUTrChEWvP_7EZC8lpVWlP2L2uO7PORpZbpW58k6nOFZHXEWQdLIWul4heZ_A2300Wxz4tWdP2PFoFAiMeFtPoRVTZ-6eZBzO2ENPNgCq2wgAQmtl4nPvdVg.svg" alt="Southampton"> Southampton</td>
+        <td>38</td>
+        <td>6</td>
+        <td>7</td>
+        <td>25</td>
+        <td>36</td>
+        <td>73</td>
+        <td>25</td>
+      </tr>
+      
+      <!-- 추가 순위표 데이터 -->
+    </table>
+  </div>
+
+  <!-- La Liga 순위표 -->
+  <div id="LaLiga" class="tabcontent">
+    <table>
+      <colgroup>
+        <col width="5%">
+        <col width="60%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+      </colgroup>
+      <tr>
+        <th>P</th>
+        <th>Club</th>
+        <th>P</th>
+        <th>W</th>
+        <th>D</th>
+        <th>L</th>
+        <th>F</th>
+        <th>A</th>
+        <th>PT</th>
+      </tr>
+      <!-- La Liga 순위표 데이터 -->
+      <tr>
+        <td>1</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/QLKt6Pbriy6b0yzWbj6LqJrFxeVjvcqLUmLeEGO9MCTouHs6w5lvv939IP6YdqlDYqhQlyCRG2NmfOl9Q0EFEw.svg" alt="Barcelona"> Barcelona</td>
+        <td>37</td>
+        <td>28</td>
+        <td>4</td>
+        <td>5</td>
+        <td>69</td>
+        <td>18</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/zWsdG2u5IlAGK1fXUhGUZiWaa6sVCvt3haqve_WCuAnxsO7l6E8dRUMqhgFLHe6ZAMd7emohIDDlLpLc9jiJ3-HG8JRCYEjSssHUF4OkmL0Ss4mLgBzya8lqA0a4o4Gj0xD3my1vaECIu7hD2S8cgA.svg" alt="Real Madrid"> Real Madrid</td>
+        <td>37</td>
+        <td>24</td>
+        <td>5</td>
+        <td>8</td>
+        <td>74</td>
+        <td>35</td>
+        <td>77</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/PJM_GAYqW3tp-7uGpNEx6LD_V3hcyviGuhysrt8MhJUeL4YeuYRZaV-tNeZZabIP-Rq9A0NWJjScqnDAj96RdftXPK3FbjiQIeen7ku3Y6XdID5_mfF2a1Uw0R0mxWgzFwkQfC93NJpvpsQ4_3bygQ.svg" alt="Atletico Madrid"> Atletico Madrid</td>
+        <td>37</td>
+        <td>23</td>
+        <td>7</td>
+        <td>7</td>
+        <td>68</td>
+        <td>31</td>
+        <td>76</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/EpFwodfPvdVN3_kCBscR-cTX96_Kl95gxr67ldJvF1DM3Ec1u6PqQqOVIHYXWqdCNi0Ui5_oCN0iQuQbuT_hFA.svg" alt="Real Sociedad"> Real Sociedad</td>
+        <td>37</td>
+        <td>20</td>
+        <td>8</td>
+        <td>9</td>
+        <td>49</td>
+        <td>34</td>
+        <td>68</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/EoywyjfwsrpAOqtLukwvEfzO0c-11_toNp_sLtp2GCfC3Us4WX4XyzwNIQ2gHqBNPIZQRr4RN7boVAkqpwvqgpUwdKovF-bW1ixLgIlbseAlpD-6dFRussaSLgvS9nAQNoDJlugf5mUSzYjUXUfEKQ.svg" alt="Villarreal"> Villarreal</td>
+        <td>37</td>
+        <td>19</td>
+        <td>6</td>
+        <td>12</td>
+        <td>57</td>
+        <td>38</td>
+        <td>63</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/RZxH2YfsBFj832t0RHa_13dmhWs35FTlK-iNUVJ_u2c_cv5naM8LNJs04eVH2CjQXxQILZYEoeodwpO4BFLIZITX4gVLKBicIlfbKg-yBdk61HhdKsiYX494dniXSXJg5OTFF4VOu-0eIYtnFNIFLA.svg" alt="Real Betis"> Real Betis</td>
+        <td>37</td>
+        <td>17</td>
+        <td>8</td>
+        <td>12</td>
+        <td>45</td>
+        <td>40</td>
+        <td>59</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/r1uv2ySV7LhwwevkJ5_xMj2IBX_lJhU-RlS2lNiiQGJF4l3yaGeAm4CGvziad0QydanY4OLg4_kmfFWyo9KCgQ.svg" alt="Osasuna"> Osasuna</td>
+        <td>37</td>
+        <td>14</td>
+        <td>8</td>
+        <td>15</td>
+        <td>35</td>
+        <td>41</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/82e0ivPGLtUiCOByJ1Bo1Ns7P97ek-yUGGIOqsk2VW6tSkczdVeGkBMwNLSN6JZlauwhxr3DX4HXfvvj8kpoPdEniUrjpcy6demF25qUtVi66_AS_kzaBSCQkawHL4XfKqGzYfphIMJf3ZOgrNGipg.svg" alt="Athletic Bilbao"> Athletic Bilbao</td>
+        <td>37</td>
+        <td>14</td>
+        <td>8</td>
+        <td>15</td>
+        <td>46</td>
+        <td>42</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/EyYCZw9QB--ly4N4BOVqAkRWiz9F-szVJmaniA6xUvXVGxs3vCXpCfjOxk2E8--2iKqL2lSE33-P2Af-8XS4my6Asrb194aa_jo6l8qosGjLxFGH54sjsHU5T03yl6IONijOlI0ucgvyWrewOL3s3w.svg" alt="Girona"> Girona</td>
+        <td>37</td>
+        <td>13</td>
+        <td>10</td>
+        <td>14</td>
+        <td>57</td>
+        <td>53</td>
+        <td>49</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/9t3qaAYLm496IJykxpjX9heNnOfTTPbDnfxzO4crZpo3D0qjYyNPQVi65YdoPmPgMLVYh02A46FYiNRHOG0qSOq_XM0UXZ0tGwDyALF6QLOM_KdJSFsWp-2ramKjYP6TtPu6z67t1yGavpyML9o3dA.svg" alt="Valladolid"> Valladolid</td>
+        <td>37</td>
+        <td>13</td>
+        <td>10</td>
+        <td>14</td>
+        <td>45</td>
+        <td>50</td>
+        <td>49</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/u0s_TsYTIwUEJ8oL6MG8LEvoUqbnHKxHs1zlcrEzGbT7Uz25bL7_lpOnVqThMR133_GX1LJY6Vohcf41VQsmhSTfuVxJNNIWgqMwHaQzX165TC1Bi9M0fgmg_Ee-dYn417O2TQt7FbRju9HBl-QLeg.svg" alt="Sevilla"> Sevilla</td>
+        <td>37</td>
+        <td>13</td>
+        <td>10</td>
+        <td>14</td>
+        <td>46</td>
+        <td>52</td>
+        <td>49</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/YGC-lydK2NFWhKdqeLpRFWAWqds_bpBv0xhQeEz3vnb17Ip5YGywHZMVT8xpu85BIB0EG9UbH_-36rjXTYo5gQ.svg" alt="Mallorca"> Mallorca</td>
+        <td>37</td>
+        <td>13</td>
+        <td>8</td>
+        <td>16</td>
+        <td>34</td>
+        <td>43</td>
+        <td>47</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/gCthRUHH0meLQhjEhiIUBnjTZvxoObnsZoBwqLRiqbM-dC5TsQbZ-qI6YPTIv-8z5vi3WtUQtsVX7TzYCmzEZQ.svg" alt="Cadiz"> Cadiz</td>
+        <td>37</td>
+        <td>10</td>
+        <td>11</td>
+        <td>16</td>
+        <td>29</td>
+        <td>52</td>
+        <td>41</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/vPHvSFKxVVyKFpTdyWmKWf9r5egVrqBLeZ2U44ex2Rs9K7NomM0xxUDTtoOI2IhXofkX8xZ-YtouiQR1U4BvZ62zgLb8wDESounPJY-ptBT4ZpoIwvlLZZfD2er2KYEV1qr-IBWNv3yO1F6H62JfbQ.svg" alt="Getafe"> Getafe</td>
+        <td>37</td>
+        <td>10</td>
+        <td>11</td>
+        <td>16</td>
+        <td>34</td>
+        <td>45</td>
+        <td>41</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/0oHV1bP8Gw9gmACGsz1sAFDsqE3EpAMVEi_6vt5nDh6YZpiRlbUV4pnnNPpLhwkPBAJymrTDczLA61raI0mlGA.svg" alt="Valencia"> Valencia</td>
+        <td>37</td>
+        <td>11</td>
+        <td>8</td>
+        <td>18</td>
+        <td>41</td>
+        <td>44</td>
+        <td>41</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/I7GjbVcQW3hsGpArKfpq42FslAO3G5mYR98X8mf-mDNsXuGAZXjL77UnKNHSjvQzFjrNfCuvB50u2-XXO5ISSH9x9yE1pUZLUXF3BDMGjJZH8ZE4mNqTSTSVn14DsORoCaE3FIMrZVz1ScksAs5XCQ.svg" alt="Almeria"> Almeria</td>
+        <td>37</td>
+        <td>11</td>
+        <td>7</td>
+        <td>19</td>
+        <td>46</td>
+        <td>62</td>
+        <td>40</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/72MybFYQurOHhpNgEWBEhMAQ4VUp5W0RZohzG2hql5l-NGBPBVpmHjM4yDfF4Vj8sphTzjnDl8ajMa9sWSjqvw.svg" alt="Celta Vigo"> Celta Vigo</td>
+        <td>37</td>
+        <td>9</td>
+        <td>13</td>
+        <td>15</td>
+        <td>36</td>
+        <td>48</td>
+        <td>40</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/6iVuwo8l_1xmbM1uHUOCfpdN2BUAnJIMqhD5hC4ihS1vdTAYn2UgRBXB8SlCYRC2-ztp9Er30rV30t1Za41axV7lEYbAEcxaMzkmhEbAvH12yuaEgb2CR4n5dn_3DzjNdi_NdnnL0Z1yoLRiNP_y6g.svg" alt="Levante"> Levante</td>
+        <td>37</td>
+        <td>9</td>
+        <td>12</td>
+        <td>16</td>
+        <td>44</td>
+        <td>57</td>
+        <td>39</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/0z8AiyeyLHMbmnyQ7dmQKY4o0FbsBppwX3pm70x6fOSApSygxSpMpIlw978jw2WshaZ5vhGxQ30TDeLKYmJ2tw.svg" alt="Espanyol"> Espanyol</td>
+        <td>37</td>
+        <td>8</td>
+        <td>10</td>
+        <td>19</td>
+        <td>30</td>
+        <td>57</td>
+        <td>34</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/KoLNnS-b_CQuH804FTB-V6Adv9VbrQXjjDBgKqpCua0mB4o1cYg6qzyA7mkRIdQTNn_FQAY4ctFBD6jtilRyvYMWRPoWnuvbJbNrfxZzlAmjnm6cUoNK0RMMSvAy7P7BJJv9ctizWfpjYXpvwxOmhg.svg" alt="Elche"> Elche</td>
+        <td>37</td>
+        <td>7</td>
+        <td>11</td>
+        <td>19</td>
+        <td>28</td>
+        <td>55</td>
+        <td>32</td>
+      </tr>
+      
+      <!-- 추가 순위표 데이터 -->
+    </table>
+  </div>
+
+  <!-- Seria A 순위표 -->
+  <div id="SeriaA" class="tabcontent">
+  
+    <table>
+      <colgroup>
+        <col width="5%">
+        <col width="60%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+      </colgroup>
+      <tr>
+        <th>P</th>
+        <th>Club</th>
+        <th>P</th>
+        <th>W</th>
+        <th>D</th>
+        <th>L</th>
+        <th>F</th>
+        <th>A</th>
+        <th>PT</th>
+      </tr>
+      <!-- Seria A 순위표 데이터 -->
+      <tr>
+        <td>1</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/e-aO5pCdVhg5k49HnW0gT9aDwJzeETegr_Ks_-9I2e-wYOMyxe_YnwJq-JggN_ui3L0mZxjx_Z46Bp4ePqcimblhYSYC9JZpjt-THvqoJEpRHw_klco-57lEG_2o2pmg9U1plZuA4a8zj4HiyxqeOQ.svg" alt="Napoli"> Napoli</td>
+        <td>37</td>
+        <td>27</td>
+        <td>6</td>
+        <td>4</td>
+        <td>75</td>
+        <td>28</td>
+        <td>87</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/OSqzZvJQih4TMGCwqLc7vDZa2nAwU8UEqlViB3ES6tX19cry0Mx6qpiVYBp4F-UXPgNphdEFBZ5OpnF504E39TYsknxKAsvBlUKNsQKWCx6S1j9W1EFKpVCFxH1nS6m9gzsh3eko0aDvWeHwk57NAA.svg" alt="Lazio"> Lazio</td>
+        <td>37</td>
+        <td>21</td>
+        <td>8</td>
+        <td>8</td>
+        <td>58</td>
+        <td>30</td>
+        <td>71</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/Gcmifa2GxwM4ANczmU8kPfye5ZSF_H2wPJOWKIMp5QQVaRP4eURHRrNN96gJFebO0DYoZOAhNt37rqlzJF2GggfOyjRMO8K4Pa8r4vD8IWVv5M6-VouVlvbq-O4qNTokXgUNC1Xj_AG7DUNnOrOUoA.svg" alt="Inter Milan"> Inter Milan</td>
+        <td>37</td>
+        <td>22</td>
+        <td>3</td>
+        <td>12</td>
+        <td>70</td>
+        <td>42</td>
+        <td>69</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/lr6DzYU6FBPHOYixqtYLkqp93JiKxyfynfMilcNm-NMQYeh4A47kjXU4sGs6Sb9nolgQjiDRCdUUrDE-mSjvVwg6CuAqZa4Ip-XhMHUbfXHgkM0R2RHbLFxW6vH-uABLdYug8k0akLgA5R0jID8grw.svg" alt="AC Milan"> AC Milan</td>
+        <td>37</td>
+        <td>19</td>
+        <td>10</td>
+        <td>8</td>
+        <td>61</td>
+        <td>42</td>
+        <td>67</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/LKaF4f7ioxmXWj7EapemUpxA8wNhFMXTvWnSn-C3pq-8h26QoJImfGwMI3yZJgIRgFxc0gI1e2aI6TQ83Z1mqORFYiiuoR96RXhNhn7X37Pj974yoB_ZZn0F2H53BQIn4PXpykuOyTvA2eUT9CAYfQ.svg" alt="Atalanta"> Atalanta</td>
+        <td>37</td>
+        <td>18</td>
+        <td>7</td>
+        <td>12</td>
+        <td>61</td>
+        <td>46</td>
+        <td>61</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/sTCTHCmvNq598zq_u_IzzpGXZOqhSrYdSFPdBNDJwfWFguRYVszhrvCuV4ddSm2ufYk-4bPQUjhNIXSyQO0GedUEgB-i2RwNcrmpQmKA75SzWojNSedBQXii69XaRXkRZvdvY4QmFix64FCZir2gpw.svg"" alt="AS Roma"> AS Roma</td>
+        <td>37</td>
+        <td>17</td>
+        <td>9</td>
+        <td>11</td>
+        <td>48</td>
+        <td>37</td>
+        <td>60</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/LQcqaTZLhxMoPjIohdYSdeYB3BSIduL55_pKxJKYKfpjZnSdloHSZLjBGTR23HERmMIpqrGe4hyxssOt9XZP9g.svg" alt="Juventus"> Juventus</td>
+        <td>37</td>
+        <td>21</td>
+        <td>6</td>
+        <td>10</td>
+        <td>55</td>
+        <td>33</td>
+        <td>59</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/goIShWIdytLVuklq0onSXaqsWxMLDUuUcvEMnWRnCmdounUFgJ_Ud9ZzWP3Po0nHeZEbhhURBZKAoea_z0XQUU4T8IiiUogbaH4j0nwMliEN6hWZQZ5EO-QBAPGeVdu4xvchIzoGwaa86FmGnK0X_A.svg" alt="Torino"> Torino</td>
+        <td>37</td>
+        <td>14</td>
+        <td>11</td>
+        <td>12</td>
+        <td>42</td>
+        <td>40</td>
+        <td>53</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/7g5JBHChoyIWbXARzPvBmZkxHZyXjfHmEONWRYFDF3dLlO8UbvGHqCEFT9QigtJlRZ5mTfp69wYGysjYkR7DwS2Ey1xIce8rfBQHTYT11JqpaLoLGRIDkxWatb4yGP9ZB6FotZwdumLmagcIrdqkWQ.svg" alt="Fiorentina"> Fiorentina</td>
+        <td>37</td>
+        <td>14</td>
+        <td>11</td>
+        <td>12</td>
+        <td>50</td>
+        <td>42</td>
+        <td>53</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/7rmFaFrSxhKn72oLOBQj15OFT9ku_I9hSDssBMZad-0ZXYOBmgcd-iO5iL6iOIYMqXN62eOQkT1NfCCkm_bY-ZQ4_CtA3gZ7305bNOLu4gbAoBMt6Ch6InQdvs6Od592_FM_RhSc5n_VQ_tOPupVkw.svg" alt="Monza"> Monza</td>
+        <td>37</td>
+        <td>14</td>
+        <td>10</td>
+        <td>13</td>
+        <td>46</td>
+        <td>47</td>
+        <td>52</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/zAaLpU5Zbp5qd6ETcHOvf-JOX1j3oOPBbXDz9u-DXnFkqwHA_iwvSzI1gqZFLbkt6947MsBhVrRIzSr_CciOjeeEqmTeJ_Bd8jUA0cwR1_46WYIkUm0RQv-2mETl0kheG9DQi88MJnmccNKtysaIBg.svg" alt="Bologna"> Bologna</td>
+        <td>37</td>
+        <td>13</td>
+        <td>12</td>
+        <td>12</td>
+        <td>50</td>
+        <td>47</td>
+        <td>51</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/stGT96lrHzXYtQiQBZvEpEzHaMeleg2KQBWfn4DMr5LKsBIL-ZtxtRojZ0POjMAPphxUs9n29ZqFPGTfbU8s4F2owvBU0vj1rNSYNf74Bb0gbFwZW2gDbdcAK5OE8WAox6THfSRyVb8W3fjQ-PtNSg.svg" alt="Udinese"> Udinese</td>
+        <td>37</td>
+        <td>11</td>
+        <td>13</td>
+        <td>13</td>
+        <td>47</td>
+        <td>47</td>
+        <td>46</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/ZbMApYjK1DnpEwOfSp23jcStvHgqucRsy249DWJjF4OuQHJ62a2RZw0T97nHidHbUZofeyz_iYHRWf7L2Jj4uA.svg" alt="Sassuolo"> Sassuolo</td>
+        <td>37</td>
+        <td>12</td>
+        <td>9</td>
+        <td>16</td>
+        <td>46</td>
+        <td>58</td>
+        <td>45</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/5Z5H-3U1PtSu4a3ohHrJIDxBJsXGxU2y9l7mrspOiVNamJm7ZGVFyfWgu0ynL3QK9Z3sRqbfy-YViDvy3aOk0gUxNIxRMTuwzQCr251nY51Ppmewk4Ii8zGfaj2sPDXdF7qHYJKrEgtrX5nP2I8WLA.svg" alt="Empoli"> Empoli</td>
+        <td>37</td>
+        <td>10</td>
+        <td>13</td>
+        <td>14</td>
+        <td>37</td>
+        <td>47</td>
+        <td>43</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/Lh3tdA81m8_b_W50G1hy8mbogLWa3FnkR-C-oiQz-UV0cwDDo_N1DKICWtshw_HbbmbRkYUIQMxTPlFXqqDKOW_MXbVCioytUUVl5TS0frvWiTxSs4O2IXnC9GGr181x_HJb6trs7alzVcub3XCJgA.svg" alt="Salernitana"> Salernitana</td>
+        <td>37</td>
+        <td>9</td>
+        <td>15</td>
+        <td>13</td>
+        <td>48</td>
+        <td>60</td>
+        <td>42</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/oXsFOHWIRA_1QLXqX-3rxO8tyyu2G-yBW2EEqSwEnASJatGAKaxe4ABQGQJTLecD6Bw5FVwO_mzJ3XE7WaWrdvbLNdQUKJ-zzXtXD0EglUUkPaPRMcvgg-1Hpq-MUoBUY2OtMl_l5BxxEqncdY1DRw.svg" alt="Lecce"> Lecce</td>
+        <td>37</td>
+        <td>8</td>
+        <td>12</td>
+        <td>17</td>
+        <td>31</td>
+        <td>43</td>
+        <td>36</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/4wO4p_YR5nLkdFCwraO6KhBH1AUrNnKrTLk-lKnDfCfJlLXhvw-AdvdLRJlF4e0uVaGIyV0oZo0s5QvHm47ni9ysLOhIz9DFMri2XN5pDLsJZnSbWZOrC90uaEN5pjY9wm44gZW1ztdAuJob0WeAVQ.svg" alt="Spezia"> Spezia</td>
+        <td>37</td>
+        <td>6</td>
+        <td>13</td>
+        <td>18</td>
+        <td>30</td>
+        <td>60</td>
+        <td>31</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/gL7qZhCWITurZy5ZLWNb8PbDnu5Z_-8-xKIY8VpDD9FwtN4f6TtLV4yx3i6AptUu8a0NozrsqX_p3T-wZcDTPI8JJMh8pHdzofP3OpsJaExJwE37ghPVL4jvxRosvd0Z_ql2qXTF0lFlwH-qEd7O6w.svg" alt="Verona"> Verona</td>
+        <td>37</td>
+        <td>7</td>
+        <td>10</td>
+        <td>20</td>
+        <td>30</td>
+        <td>56</td>
+        <td>31</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/uUC2AUqRZivBW3oEYMLkMTkcsckj1goMdDaBFY5YL8QaDHSI6KbD2wLu6i4uHAPCNRqOyKpeOP7Ny3yuUh_3zYY-JFzd2lHkzyW4sJBd118rMJhDzPuM6lytnAJvgCBP52ZtR7MUXGRl57ilPhMrFQ.svg" alt="Cremonese"> Cremonese</td>
+        <td>37</td>
+        <td>4</td>
+        <td>12</td>
+        <td>21</td>
+        <td>34</td>
+        <td>69</td>
+        <td>24</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/U9n36A9s9bVW-qrIKF4VareZHMG241yViDMoiUauX5bQDRmSjpqpkTbFRmvUXexO53J_PZ_rg2ajIDeRP7mvLqxTy5fjZoYVR68AvIypoc-okLt4WjKebH9D-QHlcDRk-SQsmL5LSS82l_KbRclStA.svg" alt="Sampdoria"> Sampdoria</td>
+        <td>37</td>
+        <td>3</td>
+        <td>10</td>
+        <td>24</td>
+        <td>24</td>
+        <td>69</td>
+        <td>19</td>
+      </tr>
+      
+      <!-- 추가 순위표 데이터 -->
+    </table>
+  </div>
+
+  <!-- BundesLiga 순위표 -->
+  <div id="BundesLiga" class="tabcontent">
+    
+    <table>
+      <colgroup>
+        <col width="5%">
+        <col width="60%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+      </colgroup>
+      <tr>
+        <th>P</th>
+        <th>Club</th>
+        <th>P</th>
+        <th>W</th>
+        <th>D</th>
+        <th>L</th>
+        <th>F</th>
+        <th>A</th>
+        <th>PT</th>
+      </tr>
+      <!-- BundesLiga 순위표 데이터 -->
+      <tr>
+        <td>1</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/3lu1GLy9Dt2fbHLWVucxi26azrwUYv_GDy7gbIJukpvw32-kciIzAsmeinKL2VdmsA4VYCTs8k50cuXIcgYK1TsrUhVDAKdW20yN8-Oz7MiFx9f0YpOFxF2wCZVmD6V4-uKiyq7sVk0N5cwwrCKfhg.svg" alt="Bayern Munich">Bayern Munich</td>
+        <td>34</td>
+        <td>21</td>
+        <td>8</td>
+        <td>5</td>
+        <td>92</td>
+        <td>38</td>
+        <td>71</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/mAR3pIoK1bhXXt9ABdItmBslaL9IvW2YH6hdFdnikFKnPt9zb04Aip-pF5K-95sQe-4ys7J5sQ31djE2KmgLCSft3GutLaUjT5ePAAKOQ5nbu6NOKSXnzprRImwtdyPcCL38WXzwTgxNkZpMHpv6Fg.svg" alt="Borussia Dortmund">Borussia Dortmund</td>
+        <td>34</td>
+        <td>22</td>
+        <td>5</td>
+        <td>7</td>
+        <td>83</td>
+        <td>44</td>
+        <td>71</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/HYgx4QFe0zyNxDrF8XEAe-iWKpP7tzaHy57B9ff3hIxv0V3x-Q71bKooW89DD5FgWaGovARqsPSo-DxX2qeRlXKLTO9Y3iICSDz-k3tcnWOnPOPxtklKHWwawgK8oNhZr279WjYH1u9HzrNi_r7FLA.svg" alt="RB Leipzig">RB Leipzig</td>
+        <td>34</td>
+        <td>20</td>
+        <td>6</td>
+        <td>8</td>
+        <td>64</td>
+        <td>41</td>
+        <td>66</td>
+      </tr>
+      <!-- Rest of the table rows -->
+      <tr>
+        <td>4</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/EZaH5E6AUts61H-OwIV4EOCrM3PH2qodwm43eOayi5kjardPNW5zEIwAyBO9yhqYJZ-wWnkgY6oQ-VVW_YZ3KQj-vshCKSl55xjUliaytKFtmGlOSkhcr1-bKFv6JjZ52W7VGmuE7ca5oAm38r-1uw.svg" alt="Union Berlin">Union Berlin</td>
+        <td>34</td>
+        <td>18</td>
+        <td>8</td>
+        <td>8</td>
+        <td>51</td>
+        <td>38</td>
+        <td>62</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/VNycVv-iyRQ06QEL0xvaXt7n1xJh4DZhxQMvplXexUAaNz1XQJOBjK3vQiT7Amz6VInDztMLOGCCASFLlE183k1NPorFbN7wik-T1aTD1iubuVn3BKsDtZJ0ztBbb-QauppUEBOw7-OaI6He9n_1pw.svg" alt="Freiburg">Freiburg</td>
+        <td>34</td>
+        <td>17</td>
+        <td>8</td>
+        <td>9</td>
+        <td>51</td>
+        <td>44</td>
+        <td>59</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/dYmNLtIDeKaexEAiRSy3gUC31hRI2yY4bp1mLwO0rcDB8JE7Bd_RWPNVNF6x6JISEFcOu4zAl_-r5_cnrriMQAM3ngczcWtApzcB10apxW_V4oemkg5mynDSsk9feoLM7J5Pkz4Xya6tjEATvSzMQA.svg" alt="Bayer Leverkusen">Bayer Leverkusen</td>
+        <td>34</td>
+        <td>14</td>
+        <td>8</td>
+        <td>12</td>
+        <td>57</td>
+        <td>49</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/5qttl0q2ggeLHiyFBMkruP9XEt1EK5OAcliUq23kbMK9Mpj7hBsDdByzaKyjJaoRAY987_TEv3kcLvPyB6BwDQ7kCaFX2WrsrJyRcITE_bNjifdZLAqEZUnIbfuZ2XVQDmMmFv73MVS5vDTp1zc8SA.svg" alt="Frankfurt">Frankfurt</td>
+        <td>34</td>
+        <td>13</td>
+        <td>11</td>
+        <td>10</td>
+        <td>58</td>
+        <td>52</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/OQ8Y_EFsa3M_wNENA41Owy5LpS8sJ95svDdKOhX0GvzfQ-r0NyqgTHJphU2HwGZ5WVe7DMqlfendKGrfsQ6OeA.svg" alt="VfL Wolfsburg">VfL Wolfsburg</td>
+        <td>34</td>
+        <td>13</td>
+        <td>10</td>
+        <td>11</td>
+        <td>57</td>
+        <td>48</td>
+        <td>49</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/fqR1drNR9XoRkiPq0WPyjgetlL-C47IsCvRnxq2CCPsfgrbsRaKI9a721fzkWDfRi5hpvNNQa2eTXq8I70cJkzljHpexbmmquvuNs30UYXshl2DlJ_hxWEHDEtRXbwDgm7hKoNNyFxsT7Zi38cMYuA.svg" alt="Mainz 05">Mainz 05</td>
+        <td>34</td>
+        <td>12</td>
+        <td>10</td>
+        <td>12</td>
+        <td>54</td>
+        <td>55</td>
+        <td>46</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/hS3Sr4zI9zub4Zpdr3oHFaCYsEhbxpp3i8WMUXPHxgPfAIdh6BBW7L9laSYQb4eDspJwL-nCWT5QSkKCHEItpg.svg" alt="Mönchengladbach">Mönchengladbach</td>
+        <td>34</td>
+        <td>11</td>
+        <td>10</td>
+        <td>13</td>
+        <td>52</td>
+        <td>55</td>
+        <td>43</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/RAYDwG_2ISjuDjdr7d1B8bWJMcfGyYHdnBep9nCcDmMPfypguWjf_uuLfyg_h3B3rPqhRLv_-O0UtJAjb_SZVQVrLwG6gFjNe39TQADEqygSdshxNd7GXFjQVuEF232_tLnXpCd9Gn8NKN94hb08tQ.svg" alt="FC Köln">FC Köln</td>
+        <td>34</td>
+        <td>10</td>
+        <td>12</td>
+        <td>12</td>
+        <td>49</td>
+        <td>54</td>
+        <td>42</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/Pd10dKhnvu691O4GzTrGBDJzu8zzYmo8b23aKi96Zp1RAUMrlJHKlKScsbFHyc3gDoiBrwnFjHDLWejZt47Hgz7AwNiHlmGw9K7jx_2B0S3qn_kGFKjX6WNSi02N0Dcy14_6ZP4kQqsYL4JlB-hvzw.svg" alt="TSG Hoffenheim">TSG Hoffenheim</td>
+        <td>34</td>
+        <td>10</td>
+        <td>6</td>
+        <td>18</td>
+        <td>48</td>
+        <td>57</td>
+        <td>36</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/QMK5QXzZU5x3lfsEr4OS1VhMehwKuX7NIKQLaVvjH1jKfJRaovtCrTBaSNpsjRNz8bFipiOzCBjeFsABbIYNxHFgfCRBG-wsQe9g89n5Xmm9XKp5oo-yz3BZJoF63Wl9MPSszxCsZk6kVJxhVEYUJw.svg" alt="Werder Bremen">Werder Bremen</td>
+        <td>34</td>
+        <td>10</td>
+        <td>6</td>
+        <td>18</td>
+        <td>51</td>
+        <td>64</td>
+        <td>36</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/-eo35wf5V56p59znfSRrWk44bBUK9LK_EJsF8I84HTXs5CPDvB2C3A8geWWPLErVTNgFdNCuRjsJhAq2XjT8lQ.svg" alt="VfL Bochum">VfL Bochum</td>
+        <td>34</td>
+        <td>10</td>
+        <td>5</td>
+        <td>19</td>
+        <td>40</td>
+        <td>72</td>
+        <td>35</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/8ZZCa17ct0fzRyy7BYnpJ7-jD9uF9UtVFhI__MaLv43WkLFSLUgW2O1NlXjmkqOIvTpzUlY5qOPidsY5rMYPuoPOTtIlWeqbAoOXWEJNxfahsX4sjSw4WcwvT0Y32ZsH1eCsRmyoLCw9i8us28DlwA.svg" alt="FC Augsburg">FC Augsburg</td>
+        <td>34</td>
+        <td>9</td>
+        <td>7</td>
+        <td>18</td>
+        <td>42</td>
+        <td>63</td>
+        <td>34</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/yPu_BBeI3iV9KeSkNtpfMjqWRVtk6yan4uAwhsf8D3nutPS8aK5VcU63Is6ZifkBvvZdlTdLszPctgiyWME577j9twBtG3po0_EHAqi_B66SydVSjUwUHkbd2Y0EDp0aBaRywqJ_AyBkjc2q9Wi1Fg.svg" alt="VfB Stuttgart">VfB Stuttgart</td>
+        <td>34</td>
+        <td>7</td>
+        <td>12</td>
+        <td>15</td>
+        <td>45</td>
+        <td>57</td>
+        <td>33</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/vagFtkehEpdS97m955oZ-BVo8S-T4_u3h4GCvsFdEJ6xRKbq0n0J3bQ-pNK9_CeAWj9B49viOJAPxn127ut1_g.svg" alt="FC Schalke 04">FC Schalke 04</td>
+        <td>34</td>
+        <td>7</td>
+        <td>10</td>
+        <td>17</td>
+        <td>35</td>
+        <td>71</td>
+        <td>31</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td class="team-cell"><img src="https://i.namu.wiki/i/nOj5SOvq49s8b_72syrvTrm5BoC7_Q0OtALgQcHR38395mCZLqAsEwjra5LiXFhtbWQZMvcm9dFmodibqHpuNj4kdS2Ki0u6x6M0NwiZOu5peHFqqszVLzrlS5Hqxg4f36OpJSoX3y_m5EK7Ozwbmg.svg" alt="Hertha BSC">Hertha BSC</td>
+        <td>34</td>
+        <td>7</td>
+        <td>8</td>
+        <td>19</td>
+        <td>42</td>
+        <td>69</td>
+        <td>29</td>
+      </tr>
+      
+      
+      <!-- 추가 순위표 데이터 -->
+    </table>
+  </div>
+
+  <script>
+    // 초기 탭 설정
+    document.getElementById("PremierLeague").style.display = "block";
+
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+
+      // 모든 탭 컨텐츠 숨기기
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+
+      // 모든 탭 버튼 비활성화
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      // 선택한 탭 컨텐츠 표시 및 탭 버튼 활성화
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+      
+    }
+  </script>
+</body>
+</html>
